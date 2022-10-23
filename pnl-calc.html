@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+
+	<header>
+        <div class="container-nav">
+            <div class="site-title">
+            <h1>Trading calculator</h1>
+            <p class="subtitle">Trader's best companion..</p>
+            </div>
+            <nav>
+				<div class="dropdown">
+					 <ul id="panel">
+					<li><a href="tp-calc.html">Target price</a></li>
+					<li><a href="stop-loss-calc.html">Stop loss</a></li>
+					<li><a class="current-page"  href="pnl-calc.html">PnL </a></li>
+					<li><a href="percentage-increase.html">Percentage</a></li>
+					<li><a href="liquidation-calc.html">Liquidation</a></li></ul>
+
+				</div>
+			</nav>
+    </div>
+    </header>
+
+    <div id="container">
+		<h2 class="pnl">PNL Calc</h2>
+        <div id="PnL">
+
+			<p><b>Enter Amount </b> <br> <input id="Amount1" value="" type="number" placeholder="Your margin e.g 1000"> </p> <br>
+
+			<P><b>Percent value</b><input id="percent" value="" type="number" placeholder="e.g 20"> </P>
+
+			<button onclick="calc4()" class="solve4"> Calculate </button> <br><br>
+
+			<p id="demo4"></p> </div>
+
+ <div id="Desc4">Note: This calc will help you calculate your profit on a particular trade, when you close a position
+    at the percentage you entered in the "Percent value" box. And inputting the amount
+        you opened a position with in the "Enter Amount" box. </div>
+    </div>
+
+  	<!--- Javascript ---->
+	<script src="script.js"></script>
+
+
+	<footer> Designed by FY <br> &copy; 2022 All Rights Reserved. </footer>
+
+</body>
+</html>

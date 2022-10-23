@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+	<header>
+        <div class="container-nav">
+            <div class="site-title">
+            <h1>Trading calculator</h1>
+            <p class="subtitle">Trader's best companion..</p>
+            </div>
+            <nav>
+				<div class="dropdown">
+					 <ul id="panel">
+					<li><a href="tp-calc.html">Target price</a></li>
+					<li><a class="current-page"  href="stop-loss-calc.html">Stop loss</a></li>
+					<li><a href="pnl-calc.html">PnL </a></li>
+					<li><a href="percentage-increase.html">Percentage</a></li>
+					<li><a href="liquidation-calc.html">Liquidation</a></li></ul>
+				
+				</div> 	
+			</nav>
+    </div>
+    </header>
+     <div id="container">
+        <h2 class="title"> Percentage calculator (SL) </h2>
+				<div id="calc3"> 
+            
+			<p><b>Enter Price</b> <br>
+			<input id="price3" value="" type="number" placeholder="e.g: 1000"></p> <br>
+			
+			<P><b>Percent value</b> <br>
+			<input id="percentage2" value="" type="number" placeholder="e.g: 5"></P>
+			
+			<button onclick="calc3()" class="solve"> Calculate </button> <br> <br>
+			
+			<p id="demo3"></p> 
+	</div>
+
+    <div id="Desc3">Note: This calc calculates your STOP LOSS PRICE; i.e the price
+        you ought to set as your SL to avoid losing your money on that trade. </div>
+        </div>
+   
+        	<!--------------Javascript------------------>
+	<script src="script.js"></script>	
+	
+	
+	<footer> Designed by FY <br> &copy; 2022 All Rights Reserved.</footer>	
+
+</body>
+</html>

@@ -1,0 +1,431 @@
+
+
+/******************* Layout **********************/
+
+body {
+margin:0;
+}
+
+header {
+background: #f8f8f8;
+padding: 2em 0 0 0;
+
+}
+
+.container-nav {
+display: flex;
+justify-content: space-between;
+width: 90%;
+max-width: 900px;
+margin: 0 auto ;
+
+}
+
+@media (max-width: 675px) {
+.container-nav {
+flex-direction: column;
+}
+
+header {
+text-align: center;
+}
+
+}
+
+
+/******** Navigation ***********/
+
+nav ul {
+
+list-style: none;
+padding: 0;
+display: flex;
+justify-content: center;
+}
+nav li {
+margin: 0 0 0 1em;
+font-size: 1.2rem;
+font-family: 'Ubuntu', sans-serif;
+
+}
+
+nav a {
+text-decoration: none;
+color: #000;
+font-weight: 700;
+padding: .25em 0;
+}
+
+nav a:hover,
+nav a:focus
+{
+background-color: #000;
+border-radius: 8px;
+color: white;
+}
+
+.current-page {
+background-color: #04AA6D;
+color: white;
+}
+.current-page:hover {
+
+}
+@media (max-width: 675px) {
+nav ul {
+flex-direction: column;
+}
+
+nav li {
+margin: .5em 0;
+}
+
+}
+
+footer{
+background-color: #f8f8f8;
+color:#ccc;
+padding: 2em 0;
+font-size: 1.1rem;
+font-family: cursive;
+text-align: center;
+width: 100%;
+
+}
+/*******************
+ID Selectors
+**********************/
+#container {
+background: url("IMG_20220702_143509_123.jpg");
+width: 100%;
+display: flex;
+
+}
+
+@media (max-width: 675px) {
+#container {
+flex-direction: column;
+}
+}
+#calc {
+margin: 3em 2em 2.2em 5em;
+width: 20%;
+height: 500px;
+max-height: 60%;
+min-width: 300px;
+font-size: 1.5rem;
+text-align: center;
+background: linear-gradient(to right, orange,yellow);
+border-radius: 10px;
+border: solid black 5px;
+padding: 1em auto;
+
+}
+
+@media (max-width: 675px) {
+#calc{
+margin: 2em auto 1em;
+height: 430px;
+padding-bottom: 1em;
+}}
+
+#calc2 {
+margin: 3em 2em 2.2em 5em;
+width: 20%;
+height: 500px;
+max-height: 60%;
+min-width: 300px;
+font-size: 1.5rem;
+text-align: center;
+background: linear-gradient(orange,red,orange);
+border-radius: 10px;
+border: solid black 5px;
+padding: 1em auto;
+}
+
+@media (max-width: 675px) {
+#calc2{
+margin: 2em auto 1em;
+height: 450px;
+padding: 20px;
+}}
+
+#calc3 {
+margin: 3em 2em 2.2em 5em;
+width: 20%;
+height: 500px;
+max-height: 60%;
+min-width: 300px;
+background: linear-gradient(orange,yellow,orange);
+border-radius: 10px;
+border: solid black 5px;
+font-size: 1.5rem;
+text-align: center;
+padding: 1em auto;
+}
+
+@media (max-width: 675px) {
+#calc3 {
+margin: 2em auto 1em;
+height: 430px;
+padding-bottom: 1em;
+}}
+
+#PnL {
+background:#000;
+color:#fee140;
+margin: 3em 2em 2.2em 5em;
+width: 20%;
+height: 500px;
+max-height: 60%;
+min-width: 300px;
+font-size: 1.5rem;
+text-align: center;
+border-radius: 10px;
+border: solid #ccc 5px;
+padding: 1em auto;
+
+}
+
+@media (max-width: 675px) {
+#PnL{
+margin: 2em auto 1em;
+height: 430px;
+padding-bottom: 1em;
+}}
+
+
+#Liqcalc {
+margin: 3em 2em 2.2em 3em;
+width: 20%;
+height: 500px;
+max-height: 60%;
+min-width: 300px;
+background: maroon;
+border: solid black 5px;
+border-radius: 10px;
+font-family: "Sans Serif";
+color: black;
+font-size: 2em;
+text-align: center;
+line-height: 400px;
+
+}
+@media (max-width: 675px) {
+#calc3 {
+margin: 2em auto 1em;
+height: 430px;
+padding-bottom: 1em;
+}}
+
+
+#Desc1 {
+margin: 5em 1em ;
+height: 250px; width: 250px;
+font-size: 1.2rem;
+background:#000;color:#fff;
+line-height: 50px;
+padding-bottom:5px; padding-left:4px;
+border-radius:5px;}
+
+@media (max-width: 675px) {
+#Desc1{
+margin: 0 1em 3em 3em;
+height: 200px;
+width: 300px;
+padding-left: 2em;
+
+}
+}
+
+#Desc2 {
+margin: 5em 1em ;
+height: 250px; width: 250px;
+font-size: 1.2rem;
+background:#000;color:#fff;
+line-height: 50px;
+padding-bottom:5px; padding-left:4px;
+border-radius:5px;}
+
+@media (max-width: 675px) {
+#Desc2{
+margin: 0 1em 3em 3em;
+height: 200px;
+width: 300px;
+padding-left: 2em;
+
+}
+}
+
+#Desc3 {
+margin: 5em 1em ;
+height: 250px; width: 250px;
+font-size: 1.2rem;
+background:#000;color:#fff;
+line-height: 50px;
+padding-bottom:5px; padding-left:4px;
+border-radius:5px;}
+
+@media (max-width: 675px) {
+#Desc3{
+margin: 0 1em 3em 3em;
+height: 200px;
+width: 300px;
+padding: 0 2em 0 2em;
+
+}
+}
+
+#Desc4 {
+margin: 5em 1em;
+width: 250px; height: 250px;
+background:linear-gradient(to right, #fee140,purple);color:#000;
+border-radius:5px;
+font-size: 1.2rem;
+line-height: 30px;
+padding-left: 4px;
+}
+
+@media (max-width: 675px) {
+	#Desc4{
+	margin: 0 1em 3em 3em;
+	height: 200px;
+	width: 300px;
+	padding: 1em 2em;
+
+	}
+	}
+
+/*******************
+Typograhy
+**********************/
+
+h1 {
+font-family: 'Lora', serif;
+font-weight: 400;
+color: #143774;
+font-size: 2.2rem;
+margin: 0;
+
+}
+
+H2 {
+margin:30px 135px;
+font-size: 2rem;
+background:linear-gradient(to right, #fa709a, #fee140);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+position: absolute;
+}
+@media(max-width: 675px){
+H2 {
+margin: 10px 80px;
+font-size: 1.7rem;
+}
+}
+
+input {
+height: 30px;
+width: 70%;
+margin-top: .5em;
+}
+
+.subtitle {
+font-weight: 700;
+color: #1792d2;
+font-size: .85rem;
+margin: 0;
+font-family: sans-serif;
+}
+
+.title  {
+margin:30px 100px;
+font-size: 2rem;
+background:linear-gradient(to right, #fa709a, #fee140);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+position: absolute;
+}
+
+@media(max-width: 675px){
+.title {
+margin: 10px 80px;
+font-size: 1.7rem;
+}
+}
+
+.p2 {
+margin:30px 100px;
+font-size: 2rem;
+background:linear-gradient(to right, #fa709a, #fee140);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+position: absolute;
+}
+
+@media(max-width: 675px){
+.p2 {
+margin: 10px 70px;
+font-size: 1.7rem;
+}
+}
+
+.liq {
+margin: 30px 100px;
+font-size: 2rem;
+background:linear-gradient(to left, #fa709a, #fee140);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+position: absolute;
+}
+
+@media(max-width: 675px){
+.liq {
+margin: 10px 90px 10px 170px;
+font-size: 2rem;
+}
+}
+
+.pnl {
+ margin:30px 220px;
+ font-size: 2rem;
+background:linear-gradient( #fee140, #fa709a);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+position: absolute;
+}
+
+
+@media(max-width: 675px){
+.pnl {
+margin: 10px 180px;
+font-size: 1.7rem;
+}
+}
+
+/*******************
+Class Selectors
+**********************/
+.solve {
+background-color: #000;
+border-radius: 8px;
+color: #fff;
+font-family: cursive;
+font-size: 1.2rem;
+font-weight: 700;
+margin-top: 1.5em;
+padding: .2em;
+width: 80%;
+}
+
+.solve4 {
+	background-color: #ccc;
+	border-radius: 8px;
+	color: #000;
+	font-family: cursive;
+	font-size: 1.2rem;
+	font-weight: 700;
+	margin-top: 1.5em;
+	padding: .2em;
+	width: 80%;
+	}

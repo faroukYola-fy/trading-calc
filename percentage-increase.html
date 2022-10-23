@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+    <header>
+        <div class="container-nav">
+            <div class="site-title">
+            <h1>Trading calculator</h1>
+            <p class="subtitle">Trader's best companion..</p>
+            </div>
+            <nav>
+				<div class="dropdown">
+					 <ul id="panel">
+					<li><a  href="tp-calc.html">Target price</a></li>
+					<li><a href="stop-loss-calc.html">Stop loss</a></li>
+					<li><a href="pnl-calc.html">PnL </a></li>
+					<li><a class="current-page" href="percentage-increase.html">Percentage</a></li>
+					<li><a href="liquidation-calc.html">Liquidation</a></li></ul>
+				
+				</div> 	
+			</nav>
+    </div>
+    </header>
+    <div id="container">
+        <h2 class="p2"> <b>Percentage change calculator</b></h2>
+			
+        <div id="calc2"> 
+
+           <p><b>Enter initial Price</b> <input id="price1" value="" type="number" placeholder="e.g: 1.2"> </p> <br>
+           
+           <P><b>Enter final Price</b> <input id="price2" value="" type="number" placeholder="e.g: 2.5"> </p>
+           
+           <button onclick="calc2()" class="solve"> <b>Calculate </button> <br><br><br>
+           
+           <p id="demo2"></p>
+            </div>
+            <div id="Desc2"> Note: This calc helps you to determine by how much percent has the price
+                gone up or down. </div>
+    </div>
+
+    	<!--------------Javascript------------------>
+	<script src="script.js"></script>	
+
+
+		<footer> Designed by FY <br> &copy; 2022 All Rights Reserved. </footer>		
+</body>
+</html>
