@@ -1,0 +1,26 @@
+{
+  "name": "trading-calc-2-0",
+  "version": "1.0.0",
+  "description": "Trading Calc 2.0 foundation with Vanilla JS SPA and MongoDB backend.",
+  "homepage": "https://github.com/faroukYola-fy/trading-calc#readme",
+  "bugs": {
+    "url": "https://github.com/faroukYola-fy/trading-calc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faroukYola-fy/trading-calc.git"
+  },
+  "license": "ISC",
+  "author": "FY",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "node --test tests/calculators.test.js",
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.4.1"
+  }
+}

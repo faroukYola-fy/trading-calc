@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Environment files (keep template)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*
+!.env.example
+
+# Optional local secret/config files
+.envrc
+*.secret
+*.secrets

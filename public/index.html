@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#b7dcff" />
+    <title>Trading Calc 2.0</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icons/icon-192.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="bg-pattern" aria-hidden="true"></div>
+    <header class="topbar">
+      <div class="brand-pill">
+        <p class="brand-kicker">Trading Calc</p>
+        <h1>2.0 Foundation</h1>
+      </div>
+      <nav class="topnav">
+        <button class="pill active" data-nav-target="suite">Calculator Suite</button>
+        <button class="pill" data-nav-target="profile">Profile</button>
+      </nav>
+      <div class="session-box">
+        <p id="sessionState">Signed out</p>
+        <button id="logoutBtn" class="ghost-btn" type="button">Sign Out</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="card auth-card">
+        <div class="auth-header">
+          <h2 id="authTitle">Welcome back</h2>
+          <button id="authModeBtn" type="button" class="link-btn">Need an account?</button>
+        </div>
+        <p class="muted">
+          Phase 1 now uses MongoDB + Vanilla JavaScript, with role-based onboarding.
+        </p>
+        <form id="authForm" class="form-grid">
+          <label class="field" id="displayNameField">
+            <span>Display name</span>
+            <input id="displayName" name="displayName" autocomplete="name" />
+          </label>
+
+          <label class="field">
+            <span>Email</span>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </label>
+
+          <label class="field">
+            <span>Password</span>
+            <input id="password" name="password" type="password" minlength="8" required />
+          </label>
+
+          <label class="field" id="roleField">
+            <span>Role</span>
+            <select id="role" name="role">
+              <option value="crypto_trader">Crypto Trader</option>
+              <option value="forex_trader">Forex Trader</option>
+              <option value="tutor">Tutor</option>
+            </select>
+          </label>
+
+          <button class="primary-btn" id="authSubmitBtn" type="submit">Sign In</button>
+        </form>
+        <p id="authStatus" class="status-text"></p>
+      </aside>
+
+      <section class="workspace">
+        <section class="card hero-card">
+          <div class="hero-title">
+            <p class="kicker">Phase 1 Progress</p>
+            <h2>SPA Calculators, Auth, Profile, PWA</h2>
+          </div>
+          <div class="hero-stats">
+            <article>
+              <p class="label">Calculators</p>
+              <p class="value">5 / 5</p>
+            </article>
+            <article>
+              <p class="label">Backend</p>
+              <p class="value">MongoDB</p>
+            </article>
+            <article>
+              <p class="label">Architecture</p>
+              <p class="value">Vanilla SPA</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="card suite-card" data-section="suite">
+          <div class="suite-header">
+            <h2>Trading Calculator Suite</h2>
+            <p>Tap a tab or swipe horizontally to switch tools.</p>
+          </div>
+
+          <div class="tab-row" id="tabRow">
+            <button type="button" class="tab-btn active" data-tab="tp">TP</button>
+            <button type="button" class="tab-btn" data-tab="sl">SL</button>
+            <button type="button" class="tab-btn" data-tab="pnl">PnL</button>
+            <button type="button" class="tab-btn" data-tab="pct">%</button>
+            <button type="button" class="tab-btn" data-tab="liq">Liq</button>
+          </div>
+
+          <div class="panels" id="panels">
+            <article class="panel active" data-panel="tp">
+              <h3>Take Profit Calculator</h3>
+              <form id="tpForm" class="form-grid inline-grid">
+                <label class="field"><span>Entry Price</span><input id="tpEntry" type="number" step="any" required /></label>
+                <label class="field"><span>Take Profit Price</span><input id="tpTarget" type="number" step="any" required /></label>
+                <label class="field"><span>Position Size (USD)</span><input id="tpSize" type="number" step="any" required /></label>
+                <label class="field">
+                  <span>Position Type</span>
+                  <select id="tpType"><option value="long">Long</option><option value="short">Short</option></select>
+                </label>
+                <label class="field"><span>Leverage</span><input id="tpLeverage" type="number" step="1" value="10" required /></label>
+                <label class="field"><span>Fee %</span><input id="tpFee" type="number" step="0.01" value="0.1" required /></label>
+                <label class="field"><span>Stop Loss Price (optional)</span><input id="tpStop" type="number" step="any" /></label>
+                <button class="primary-btn" type="submit">Calculate TP</button>
+              </form>
+              <p class="result" id="tpResult"></p>
+            </article>
+
+            <article class="panel" data-panel="sl">
+              <h3>Stop Loss Calculator</h3>
+              <form id="slForm" class="form-grid inline-grid">
+                <label class="field"><span>Entry Price</span><input id="slEntry" type="number" step="any" required /></label>
+                <label class="field"><span>Stop Loss Price</span><input id="slStop" type="number" step="any" required /></label>
+                <label class="field"><span>Position Size (USD)</span><input id="slSize" type="number" step="any" required /></label>
+                <label class="field">
+                  <span>Position Type</span>
+                  <select id="slType"><option value="long">Long</option><option value="short">Short</option></select>
+                </label>
+                <label class="field"><span>Leverage</span><input id="slLeverage" type="number" step="1" value="10" required /></label>
+                <label class="field"><span>Fee %</span><input id="slFee" type="number" step="0.01" value="0.1" required /></label>
+                <button class="primary-btn" type="submit">Calculate SL</button>
+              </form>
+              <p class="result" id="slResult"></p>
+            </article>
+
+            <article class="panel" data-panel="pnl">
+              <h3>PnL Calculator</h3>
+              <form id="pnlForm" class="form-grid inline-grid">
+                <label class="field"><span>Entry Price</span><input id="pnlEntry" type="number" step="any" required /></label>
+                <label class="field"><span>Exit Price</span><input id="pnlExit" type="number" step="any" required /></label>
+                <label class="field"><span>Position Size (USD)</span><input id="pnlSize" type="number" step="any" required /></label>
+                <label class="field">
+                  <span>Position Type</span>
+                  <select id="pnlType"><option value="long">Long</option><option value="short">Short</option></select>
+                </label>
+                <label class="field"><span>Leverage</span><input id="pnlLeverage" type="number" step="1" value="10" required /></label>
+                <label class="field"><span>Fee %</span><input id="pnlFee" type="number" step="0.01" value="0.1" required /></label>
+                <button class="primary-btn" type="submit">Calculate PnL</button>
+              </form>
+              <p class="result" id="pnlResult"></p>
+            </article>
+
+            <article class="panel" data-panel="pct">
+              <h3>Percentage Change Calculator</h3>
+              <form id="pctForm" class="form-grid inline-grid">
+                <label class="field"><span>Initial Value</span><input id="pctInitial" type="number" step="any" required /></label>
+                <label class="field"><span>Final Value</span><input id="pctFinal" type="number" step="any" required /></label>
+                <button class="primary-btn" type="submit">Calculate Change</button>
+              </form>
+              <p class="result" id="pctResult"></p>
+            </article>
+
+            <article class="panel" data-panel="liq">
+              <h3>Liquidation Price Calculator</h3>
+              <form id="liqForm" class="form-grid inline-grid">
+                <label class="field">
+                  <span>Exchange</span>
+                  <select id="liqExchange"><option value="binance">Binance</option><option value="bybit">Bybit</option></select>
+                </label>
+                <label class="field">
+                  <span>Position Type</span>
+                  <select id="liqType"><option value="long">Long</option><option value="short">Short</option></select>
+                </label>
+                <label class="field"><span>Entry Price</span><input id="liqEntry" type="number" step="any" required /></label>
+                <label class="field"><span>Leverage</span><input id="liqLeverage" type="number" step="1" value="10" required /></label>
+                <label class="field"><span>Wallet Balance / Margin</span><input id="liqMargin" type="number" step="any" required /></label>
+                <label class="field"><span>Maintenance Margin Rate</span><input id="liqMmr" type="number" step="0.0001" required /></label>
+                <button class="primary-btn" type="submit">Calculate Liquidation</button>
+              </form>
+              <p class="result" id="liqResult"></p>
+            </article>
+          </div>
+        </section>
+
+        <section class="card profile-card" data-section="profile">
+          <div class="suite-header">
+            <h2>Profile Management</h2>
+            <p>Update your role-related details and preferred style.</p>
+          </div>
+          <form id="profileForm" class="form-grid">
+            <label class="field">
+              <span>Display name</span>
+              <input id="profileDisplayName" required />
+            </label>
+            <label class="field">
+              <span>Email (read-only)</span>
+              <input id="profileEmail" disabled />
+            </label>
+            <label class="field">
+              <span>Role (read-only)</span>
+              <input id="profileRole" disabled />
+            </label>
+            <label class="field">
+              <span>Preferred trading style</span>
+              <select id="profileStyle">
+                <option value="scalp">Scalp</option>
+                <option value="day_trade">Day Trade</option>
+                <option value="swing">Swing</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Wallet address (0x...)</span>
+              <input id="profileWallet" />
+            </label>
+            <label class="field">
+              <span>Avatar URL</span>
+              <input id="profileAvatarUrl" />
+            </label>
+            <button class="primary-btn" type="submit">Save Profile</button>
+          </form>
+          <p id="profileStatus" class="status-text"></p>
+        </section>
+      </section>
+    </main>
+
+    <script src="/calculators.js" defer></script>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
